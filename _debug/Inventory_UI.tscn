@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkvradhtp25pj"]
+
+[ext_resource type="Script" path="res://_debug/inventory_ui.gd" id="1_c8mgc"]
+
+[node name="Inventory_UI" type="CanvasLayer"]
+script = ExtResource("1_c8mgc")
+
+[node name="Item_List" type="VBoxContainer" parent="."]
+offset_left = 85.0
+offset_top = 138.0
+offset_right = 289.0
+offset_bottom = 322.0
+mouse_filter = 2

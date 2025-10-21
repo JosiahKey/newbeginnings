@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://b71csy5vlolrb"]
+
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_s34mn"]
+[ext_resource type="SpriteFrames" uid="uid://b8d3mdlkvuoqg" path="res://zAssets/Guys/player.tres" id="2_3qy6u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wneaf"]
+radius = 7.0
+height = 14.0
+
+[node name="player" type="CharacterBody2D" groups=["Player"]]
+texture_filter = 1
+collision_layer = 3
+script = ExtResource("1_s34mn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_wneaf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.75, 0.75)
+sprite_frames = ExtResource("2_3qy6u")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 5)
+zoom = Vector2(4, 4)
+
+[node name="R_highlight" type="ColorRect" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -8.0
+offset_right = 24.0
+offset_bottom = 8.0
+grow_vertical = 2
+color = Color(1, 1, 0.239216, 0.337255)
+
+[node name="L_highlight" type="ColorRect" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -8.0
+offset_right = -8.0
+offset_bottom = 8.0
+grow_vertical = 2
+color = Color(1, 1, 0.239216, 0.337255)
+
+[node name="U_highlight" type="ColorRect" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 8.0
+offset_bottom = -8.0
+grow_vertical = 2
+color = Color(1, 1, 0.239216, 0.337255)
+
+[node name="D_highlight" type="ColorRect" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = 8.0
+offset_right = 8.0
+offset_bottom = 24.0
+grow_vertical = 2
+color = Color(1, 1, 0.239216, 0.337255)
