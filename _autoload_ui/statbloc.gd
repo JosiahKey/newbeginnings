@@ -28,6 +28,7 @@ func get_stat(stat: String):
 		if x == stat:
 			return stats[x]
 
+@warning_ignore("shadowed_global_identifier")
 func update_stats(hp_max, hp, str, spd):
 	stats["hp_max"] += hp_max
 	if stats["hp"] + hp > stats["hp_max"]:
